@@ -2,9 +2,9 @@
 
 class Constants{
     
-    const USER  = 'user';
+    const USER  = 'root';
     const LOCAL = 'localhost';
-    const PASSWD  = '';
+    const PASSWD  = 'pracadadpe';
     const DATABASE = 'rocks';
     const NAME = 'name';
     const TABLE_MAGMATIC = 'magmatic';
@@ -28,9 +28,9 @@ class Constants{
     const DESCRIPTION = 'description';//Used for both Magmatic and Metamorphic
     
     const MAIN_METAMORPHIC = 'main';
-    const SECONDARY_MAGMATIC = 'sec';
+    const SECONDARY_METAMORPHIC = 'sec';
     const COMPOSITION = 'composition';
-    const TEXTURE = 'textures';
+    const TEXTURE = 'texture';
     const METAMORPHISM ='metamorphism';
     const FACIES = 'facies';
     const PROTOLITH = 'protolith';    
@@ -93,7 +93,7 @@ class Constants{
         return self::SATURATION;
     }
     public static function getFeldspars(){
-        return self::FELDPARS;
+        return self::FELDSPARS;
     }
     public static function getColorIndex(){
         return self::COLOR_INDEX;
@@ -108,10 +108,10 @@ class Constants{
         return self::DESCRIPTION;
     }
     public static function getMainMetamorphic(){
-        return self::MAIN;
+        return self::MAIN_METAMORPHIC;
     }
     public static function getSecMetamorphic(){
-        return self::SEC;
+        return self::SECONDARY_METAMORPHIC;
     }
     public static function getComposition(){
         return self::COMPOSITION;

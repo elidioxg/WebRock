@@ -1,15 +1,15 @@
 <?php
 include '../resources/constants.php';
-$value1 = filter_input(INPUT_GET, 'field1', FILTER_REQUIRE_ARRAY);
-$value2 = filter_input(INPUT_GET, 'field2');
-$value3 = filter_input_array(INPUT_GET, 'field3');
-$value4 = filter_input_array(INPUT_GET, 'field4');
-$value5 = filter_input_array(INPUT_GET, 'field5');
-$value6 = filter_input_array(INPUT_GET, 'field6');
-$value7 = filter_input_array(INPUT_GET, 'field7');
-$value8 = filter_input_array(INPUT_GET, 'field8');
-$value9 = filter_input_array(INPUT_GET, 'field9');
-$value10 = filter_input_array(INPUT_GET, 'field10');
+$value1 = filter_input(INPUT_POST, 'field1');
+$value2 = filter_input(INPUT_POST, 'field2');
+$value3 = filter_input(INPUT_POST, 'field3');
+$value4 = filter_input(INPUT_POST, 'field4');
+$value5 = filter_input(INPUT_POST, 'field5');
+$value6 = filter_input(INPUT_POST, 'field6');
+$value7 = filter_input(INPUT_POST, 'field7');
+$value8 = filter_input(INPUT_POST, 'field8');
+$value9 = filter_input(INPUT_POST, 'field9');
+$value10 = filter_input(INPUT_POST, 'field10');
 
 $user= Constants::getUser();
 $local = Constants::getLocal();
@@ -28,26 +28,27 @@ $facies = Constants::getFacies();
 $protolith = Constants::getProtolith();
 $description = Constants::getDescription();
 
-$connection = mysql_connect($local, $user, $passwd) or print(mysql_error());
+$connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
+mysql_select_db($database, $connection) or die(mysql_error());
 mysql_query("SET NAMES 'utf8'");
 mysql_query("SET character_set_connection=utf8");
 mysql_query("SET character_set_client=utf8");
 mysql_query("SET character_set_results=utf8");
-$sql = "SELECT * FROM $table WHERE $name = '$field1'";
+$sql = "SELECT * FROM $table WHERE $name = '$value1' ;";
 $result = mysql_query($sql, $connection);
-if($result == null){
+if (\mysql_num_rows($result) <= 0) {
     $sql = "INSERT INTO $table ($name, $main, $sec, $composition,"
             . "$structure, $texture, $metamorphism, $facies, $protolith,"
-            . "$description ) VALUES ('$field1', '$field2', '$field3',"
-            . "'$field4', '$field5', '$field6', '$field7', '$field8',"
-            . "'$field9', '$field10');";
+            . "$description ) VALUES ('$value1', '$value2', '$value3',"
+            . "'$value4', '$value5', '$value6', '$value7', '$value8',"
+            . "'$value9', '$value10');";
    $result = mysql_query($sql, $connection) or print mysql_error();
    echo "<script language='javascript' "
    . "type='text/javascript'>alert('Registro adicionado'); "
-   . "window.location.href=''</script>";                     
+   . "window.location.href='index_metamorphic.php'</script>";                     
    } else {
        echo "<script language='javascript' "
        . "type='text/javascript'>alert('Este registro ja existe');"
-               . " window.location.href=''</script>";
+               . " window.location.href='add_metamorphic.php'</script>";
    }
   

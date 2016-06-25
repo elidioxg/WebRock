@@ -13,7 +13,7 @@
                 </tr>
                 <tr>
                     <td> <label>Main Mineralogy</label></td>
-                    <td> <input type="text" name="field2"id="field2"></td>
+                    <td> <textarea type="text" rows="3" name="field2"id="field2"></textarea></td>
                 </tr>
                 <tr>
                     <td> <label>Secondary Mineralogy</label></td>
@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td> <label>Texture</label></td>
-                    <td> <input type="text" name="filed6" id="field6"></td>
+                    <td> <input type="text" name="field6" id="field6"></td>
                 </tr>
                 <tr>
                     <td> <label>Metamorphism</label></td>
@@ -45,7 +45,13 @@
                 </tr>
                 <tr>
                     <td> Description</td>
-                    <td> <input type="text" name="field10" id='field10'></td>
+                    <td> <input type="text" rows="3" name="field10" id='field10'></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type='submit' value='Add' id='add' name='add'>
+                        <input type='submit' value='Clear' id='clear' name='clear'>
+                    </td>
                 </tr>
             </table>            
         </form>        

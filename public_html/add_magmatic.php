@@ -78,7 +78,13 @@
                     <td> <label> Description</label></td>
                     <td> <input type="text" name="field" id="field"></td>
                 </tr>
-            </table>                                                                
+                <tr>
+                    <td colspan="4">
+                        <input type='submit' value='Add' id='add' name='add'>
+                        <input type='submit' value='Clear' id='clear' name='clear'>
+                    </td>
+                </tr>
+            </table>
         </form>
     </body>
 </html>
