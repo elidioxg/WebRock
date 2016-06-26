@@ -2,11 +2,11 @@
 
 include '../resources/constants.php';
 header('Content-Type: text/html; charset=UTF-8');
+
 $user = Constants::getUser();
 $local = Constants::getLocal();
 $passwd = Constants::getPasswd();
 $database = Constants::getDatabase();
-
 $table = Constants::getTableMet();
 
 $name = Constants::getName();
@@ -20,8 +20,8 @@ $facies = Constants::getFacies();
 $protolith = Constants::getProtolith();
 $description = Constants::getDescription();
 
-$connection = mysql_connect($local, $user, $passwd) or print(mysql_error());
-mysql_select_db($table, $connection) or print mysql_error();
+$connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
+mysql_select_db($database, $connection) or die (mysql_error());
 mysql_query("SET NAMES 'utf8'");
 mysql_query("SET character_set_connection=utf8");
 mysql_query("SET character_set_client=utf8");
@@ -33,16 +33,16 @@ $i = 0;
 
 echo '<table border="1">';
 echo '    <tr>';
-echo '        <td>Name</td>';
-echo '        <td> Main Mineralogy</td>';
-echo '        <td> Secondary Mineralogy</td>';
-echo '        <td> Composition</td>';
-echo '        <td> Structure</td>';
-echo '        <td> Texture</td>';
-echo '        <td> Metamorphism</td>';
-echo '        <td> Facies</td>';
-echo '        <td> Protolith</td>';
-echo '        <td> Description</td>';
+echo "        <td> <b>Name</b></td>";
+echo '        <td> <b>Main Mineralogy</b></td>';
+echo '        <td> <b>Secondary Mineralogy</b></td>';
+echo '        <td> <b>Composition</b></td>';
+echo '        <td> <b>Structure</b></td>';
+echo '        <td> <b>Texture</td></b>';
+echo '        <td> <b>Metamorphism</b></td>';
+echo '        <td> <b>Facies</b></td>';
+echo '        <td> <b>Protolith</b></td>';
+echo '        <td> <b>Description</b></td>';
 echo '    </tr>';
 while ($results = mysql_fetch_array($result)) {
     echo "<tr>";
@@ -57,6 +57,9 @@ while ($results = mysql_fetch_array($result)) {
     echo "  <td> $results[$protolith]</td>";
     echo "  <td> $results[$description]</td>";
     echo "</tr>";
+    $i++;
 }
 echo '</table>';
+mysql_close($connection);
+echo "Records: $i ";
 

@@ -13,11 +13,11 @@
                 </tr>
                 <tr>
                     <td> <label>Main Mineralogy</label></td>
-                    <td> <textarea type="text" rows="3" name="field2"id="field2"></textarea></td>
+                    <td> <textarea type="text" rows="5" name="field2"id="field2"></textarea></td>
                 </tr>
                 <tr>
                     <td> <label>Secondary Mineralogy</label></td>
-                    <td> <input type="text" name="field3"id="field3"></td>
+                    <td> <textarea type="text" rows="5"name="field3"id="field3"></textarea></td>
                 </tr>
                 <tr>
                     <td> <label> Composition</label> </td>
@@ -36,16 +36,16 @@
                     <td> <input type="text" name="field7" id="field7"></td>
                 </tr>
                 <tr>
-                    <td> Facies</td>
+                    <td> <label>Facies</label></td>
                     <td> <input type='text' name='field8' id='field8'></td>
                 </tr>
                 <tr>
-                    <td> Protolith</td>
+                    <td> <label>Protolith</label></td>
                     <td> <input type='text' name='field9' id='field9'></td>
                 </tr>
                 <tr>
-                    <td> Description</td>
-                    <td> <input type="text" rows="3" name="field10" id='field10'></td>
+                    <td> <label>Description</label></td>
+                    <td> <textarea type="text" rows="5" name="field10" id='field10'></textarea></td>
                 </tr>
                 <tr>
                     <td colspan="4">
