@@ -2,11 +2,11 @@
 
 include '../resources/constants.php';
 header('Content-Type: text/html; charset=UTF-8');
+
 $user = Constants::getUser();
 $local = Constants::getLocal();
 $passwd = Constants::getPasswd();
 $database = Constants::getDatabase();
-
 $table = Constants::getTableMag();
 
 $name = Constants::getName();
@@ -28,8 +28,8 @@ $alumina = Constants::getAlumina();
 $alkalinity = Constants::getAlkalinity();
 $description = Constants::getDescription();
 
-$connection = mysql_connect($local, $user, $passwd) or print(mysql_error());
-mysql_select_db($database, $connection) or print mysql_error();
+$connection = mysql_connect($local, $user, $passwd) or die(mysql_error());
+mysql_select_db($database, $connection) or die(mysql_error());
 mysql_query("SET NAMES 'utf8'");
 mysql_query("SET character_set_connection=utf8");
 mysql_query("SET character_set_client=utf8");
@@ -41,24 +41,24 @@ $i = 0;
 
 echo '<table border="1">';
 echo '    <tr>';
-echo '        <td> Name</td>';
-echo '        <td> Main Mineralogy</td>';
-echo '        <td> Secondary Mineralogy</td>';
-echo '        <td> Structure</td>';
-echo '        <td> Chrystalline</td>';
-echo '        <td> Visibility</td>';
-echo '        <td> Size</td>';
-echo '        <td> Relative Size</td>';
-echo '        <td> Geometry</td>';
-echo '        <td> Articulation</td>';
-echo '        <td> Framework</td>';
-echo '        <td> Acidity</td>';
-echo '        <td> Saturation</td>';
-echo '        <td> Feldspars</td>';
-echo '        <td> Color Index</td>';
-echo '        <td> Alumina</td>';
-echo '        <td> Alkalinity</td>';
-echo '        <td> Description</td>';
+echo '        <td> <b>Name</b></td>';
+echo '        <td> <b>Main Mineralogy</b></td>';
+echo '        <td> <b>Secondary Mineralogy</b></td>';
+echo '        <td> <b>Structure</b></td>';
+echo '        <td> <b>Chrystalline</b></td>';
+echo '        <td> <b>Visibility</b></td>';
+echo '        <td> <b>Size</b></td>';
+echo '        <td> <b>Relative Size</b></td>';
+echo '        <td> <b>Geometry</b></td>';
+echo '        <td> <b>Articulation</b></td>';
+echo '        <td> <b>Framework</b></td>';
+echo '        <td> <b>Acidity</b></td>';
+echo '        <td> <b>Saturation</b></td>';
+echo '        <td> <b>Feldspars</b></td>';
+echo '        <td> <b>Color Index</b></td>';
+echo '        <td> <b>Alumina</b></td>';
+echo '        <td> <b>Alkalinity</b></td>';
+echo '        <td> <b>Description</b></td>';
 echo '    </tr>';
 while ($results = mysql_fetch_array($result)) {
     echo "<tr>";
@@ -81,6 +81,10 @@ while ($results = mysql_fetch_array($result)) {
     echo "  <td> $results[$alkalinity]</td>";
     echo "  <td> $results[$description]</td>";
     echo "</tr>";
+    $i++;
 }
 echo '</table> ';
+mysql_close($connection);
+echo "Records: $i ";
+
 
