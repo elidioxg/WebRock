@@ -42,13 +42,13 @@ if (\mysql_num_rows($result) <= 0) {
             . "$description ) VALUES ('$value1', '$value2', '$value3',"
             . "'$value4', '$value5', '$value6', '$value7', '$value8',"
             . "'$value9', '$value10');";
-   $result = mysql_query($sql, $connection) or print mysql_error();
+   $result = mysql_query($sql, $connection) or die(mysql_error());
    echo "<script language='javascript' "
    . "type='text/javascript'>alert('Registro adicionado'); "
    . "window.location.href='index_metamorphic.php'</script>";                     
-   } else {
+   } else {       
        echo "<script language='javascript' "
        . "type='text/javascript'>alert('Este registro ja existe');"
                . " window.location.href='add_metamorphic.php'</script>";
    }
-  
+  mysql_close($connection);

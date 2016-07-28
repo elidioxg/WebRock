@@ -5,7 +5,7 @@
         <title>Add Metamorphic Rock</title>
     </head>
     <body>
-        <form method="POST" action="insert_metamorphic.php">
+        <form method="POST" action="add_metamorphic_sql.php">
             <table>
                 <tr>
                     <td> <label>Name</label></td>
@@ -50,7 +50,8 @@
                 <tr>
                     <td colspan="4">
                         <input type='submit' value='Add' id='add' name='add'>
-                        <input type='submit' value='Clear' id='clear' name='clear'>
+                        <input type='submit' value='Clear'  name='clear'>
+                        <input type='submit' value='Cancel' name='cancel'>
                     </td>
                 </tr>
             </table>            

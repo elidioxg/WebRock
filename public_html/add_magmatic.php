@@ -4,14 +4,14 @@
         <title>Add Magmatic Rock</title>
     </head>
     <body>
-        <form method="POST" action="insert_magmatic.php">
+        <form method="POST" action="add_magmatic_sql.php">
             <table >
                 <tr>
                     <td> <label> Name</label> </td>
-                    <td> <input type="text" name="field1" id="field1"> <br></td>
+                    <td colspan="3"> <input type="text" name="field1" id="field1"> <br></td>
                 </tr>
                 <tr>
-                    <td> <label> Main Mineralogy</label></td>
+                    <td> <table> <label> Main Mineralogy</label></td>
                     <td> <input type="text" name="field2" id="field2"></td>
                 </tr>
                 <tr>
@@ -35,7 +35,7 @@
                     <td> <input type="text" name="field" id="field"></td>
                 </tr>
                 <tr>
-                    <td> <label> retlative_size</label></td>
+                    <td> <label> relative_size</label></td>
                     <td> <input type="text" name="field" id="field"></td>
                 </tr>
                 <tr>

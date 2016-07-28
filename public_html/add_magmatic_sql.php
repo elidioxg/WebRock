@@ -1,4 +1,5 @@
 <?php
+
 include '../resources/constants.php';
 $value1 = filter_input(INPUT_POST, 'field1');
 $value2 = filter_input(INPUT_POST, 'field2');
@@ -19,7 +20,7 @@ $value16 = filter_input(INPUT_POST, 'field16');
 $value17 = filter_input(INPUT_POST, 'field17');
 $value18 = filter_input(INPUT_POST, 'field18');
 
-$user  = Constants::getUser();
+$user = Constants::getUser();
 $local = Constants::getLocal();
 $passwd = Constants::getPasswd();
 $database = Constants::getDatabase();
@@ -53,17 +54,17 @@ mysql_query("SET character_set_results=utf8");
 $sql = "SELECT * FROM $table WHERE $name = '$value1' ;";
 $result = mysql_query($sql, $connection);
 if (\mysql_num_rows($result) <= 0) {
-    $sql = "INSERT INTO $table ($name, $mineralogy, $secondary, $structure,".
-            "$chrystal, $visibility, $size, $relative_size, $geometry, ".
-            "$articulation, $framework, $acidity, $saturation, $feldspars,".
-            "$color_index, $alumina, $alkalinity, $description) VALUES ('".
-            "$value1', '$field2', '$field3', '$field4', '$field5', '$field6',".
-            "'$field7', '$field8', '$field9', '$field9',  '$field10',".
-            "'$field11', '$field12', '$field13', '$field14', '$field15',".
-            "'$field16', '$field17', '$field18');";
-    $result = mysql_query($sql, $connection) or die(mysql_error());  
+    $sql = "INSERT INTO $table ($name, $mineralogy, $secondary, $structure," .
+            "$chrystal, $visibility, $size, $relative_size, $geometry, " .
+            "$articulation, $framework, $acidity, $saturation, $feldspars," .
+            "$color_index, $alumina, $alkalinity, $description) VALUES ('" .
+            "$value1', '$value2', '$value3', '$value4', '$value5', '$value6'," .
+            "'$value7', '$value8', '$value9', '$value10'," .
+            "'$value11', '$value12', '$value13', '$value14', '$value15'," .
+            "'$value16', '$value17', '$value18');";
+    $result = mysql_query($sql, $connection) or die(mysql_error());
     echo "<script language='javascript' type='text/javascript'>"
-    . "alert('Registro adicionado'); window.location.href='index_magmatic.php'</script>";                     
+    . "alert('Registro adicionado'); window.location.href='index_magmatic.php'</script>";
 } else {
     echo"<script language='javascript' type='text/javascript'>"
     . "alert('Esta especie ja existe'); window.location.href='add_magmatic.php'</script>";
