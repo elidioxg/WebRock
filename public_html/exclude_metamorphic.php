@@ -1,6 +1,5 @@
 <form method="POST" action="exclude_metamorphic_sql.php">
-    <input list="met_rocks" name="Exclude">
-    <datalist id="met_rocks">
+    <select name="met_rocks">
     <?php include '../resources/constants.php';
         header('Content-Type: text/html; charset=UTF-8');
 
@@ -23,9 +22,10 @@
         $result = mysql_query($sql, $connection) or die(mysql_error());
         
         while ($results = mysql_fetch_array($result)) {
-            echo "<option value='$results[$name]'>";            
+            echo "<option value='".$results[$name]."'>".$results[$name]."</option>";            
         }
+        mysql_close($connection);
    ?>
-    </datalist>
+    </select>
     <input type="submit" value="Exclude" id="exclude" name="exclude">
 </form>
