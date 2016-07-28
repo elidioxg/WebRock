@@ -1,6 +1,7 @@
 <?php
 
 include '../resources/constants.php';
+include '../resources/constants_eng.php';
 header('Content-Type: text/html; charset=UTF-8');
 
 $user = Constants::getUser();
@@ -31,22 +32,23 @@ $sql = "SELECT * FROM $table ORDER BY $name ASC;";
 $result = mysql_query($sql, $connection);
 $i = 0;
 
+echo "<label id ='title'>".Strings::StrMetRock()."</label>";
 echo '<table border="1">';
 echo '    <tr>';
-echo "        <td> <b>Name</b></td>";
-echo '        <td> <b>Main Mineralogy</b></td>';
-echo '        <td> <b>Secondary Mineralogy</b></td>';
-echo '        <td> <b>Composition</b></td>';
-echo '        <td> <b>Structure</b></td>';
-echo '        <td> <b>Texture</td></b>';
-echo '        <td> <b>Metamorphism</b></td>';
-echo '        <td> <b>Facies</b></td>';
-echo '        <td> <b>Protolith</b></td>';
-echo '        <td> <b>Description</b></td>';
+echo "        <td> <label id='tableTitle'>".Strings::getName()."</label></td>";
+echo '        <td> <label id="tableTitle">'.Strings::getMainMetamorphic().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getSecMetamorphic().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getComposition().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getStructure().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getTexture().'</label></b>';
+echo '        <td> <label id="tableTitle">'.Strings::getMetamorphism().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getFacies().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getProtolith().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getDescription().'</label></td>';
 echo '    </tr>';
 while ($results = mysql_fetch_array($result)) {
-    echo "<tr>";
-    echo "  <td> <a href='' > $results[$name]</a></td>";
+    echo "<tr>";    
+    echo "  <td> <a href='modify_metamorphic.php?rock=$results[$name]'> $results[$name]</a></td>";
     echo "  <td> $results[$main] </td>";
     echo "  <td> $results[$sec]</td>";
     echo "  <td> $results[$composition]</td>";

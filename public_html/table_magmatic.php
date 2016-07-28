@@ -1,6 +1,7 @@
 <?php
 
 include '../resources/constants.php';
+include '../resources/constants_eng.php';
 header('Content-Type: text/html; charset=UTF-8');
 
 $user = Constants::getUser();
@@ -39,30 +40,36 @@ $sql = "SELECT * FROM $table ORDER BY $name ASC;";
 $result = mysql_query($sql, $connection);
 $i = 0;
 
-echo '<table border="1">';
+echo "<label id ='title'>".Strings::strMagRock()."</label>";
+echo '<table id="tbrock" border="1">';
 echo '    <tr>';
-echo '        <td> <b>Name</b></td>';
-echo '        <td> <b>Main Mineralogy</b></td>';
-echo '        <td> <b>Secondary Mineralogy</b></td>';
-echo '        <td> <b>Structure</b></td>';
-echo '        <td> <b>Chrystalline</b></td>';
-echo '        <td> <b>Visibility</b></td>';
-echo '        <td> <b>Size</b></td>';
-echo '        <td> <b>Relative Size</b></td>';
-echo '        <td> <b>Geometry</b></td>';
-echo '        <td> <b>Articulation</b></td>';
-echo '        <td> <b>Framework</b></td>';
-echo '        <td> <b>Acidity</b></td>';
-echo '        <td> <b>Saturation</b></td>';
-echo '        <td> <b>Feldspars</b></td>';
-echo '        <td> <b>Color Index</b></td>';
-echo '        <td> <b>Alumina</b></td>';
-echo '        <td> <b>Alkalinity</b></td>';
-echo '        <td> <b>Description</b></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getName().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getMainMagmatic().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getSecMagmatic().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getStructure().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getChrystalline().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getVisibility().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getSize().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getRelativeSize().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getGeometry().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getArticulation().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getFramework().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getAcidity().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getSaturation().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getFeldspars().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getColorIndex().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getAlumina().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getAlcalinity().'</label></td>';
+echo '        <td> <label id="tableTitle">'.Strings::getDescription().'</label></td>';
 echo '    </tr>';
 while ($results = mysql_fetch_array($result)) {
     echo "<tr>";
-    echo "  <td> <a href='' > $results[$name]</a></td>";
+    echo "  <td>";
+    echo "    <form method='POST' action='/WebRocks/public_html/modify_magmatic.php'>";
+    echo "      <input type='submit' value='".$results[$name]."' name='rock_name' id='btrock'>"; 
+    echo "    </form>";
+    echo "  </td>";
+    //echo "  <td> <a href='modify_magmatic.php?rock='$results[$name]' id='btrock'> $results[$name]</a></td>";
     echo "  <td> $results[$mineralogy] </td>";
     echo "  <td> $results[$secondary]</td>";
     echo "  <td> $results[$structure]</td>";
@@ -86,5 +93,7 @@ while ($results = mysql_fetch_array($result)) {
 echo '</table> ';
 mysql_close($connection);
 echo "Records: $i ";
+?>
+
 
 
