@@ -57,7 +57,7 @@ $result = mysql_query($sql, $connection);
 
 if (\mysql_num_rows($result) > 0) {
     
-   $sql = "UPDATE $table SET $main='$value2' WHERE $name='$value1';";
+   $sql = "UPDATE $table SET $mineralogy='$value2' WHERE $name='$value1';";
    $result = mysql_query($sql, $connection) or die(mysql_error());
     
    echo "<script language='javascript' "
