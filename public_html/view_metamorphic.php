@@ -3,7 +3,7 @@
     <select name="met_rock">
         <?php
         $valueName = filter_input(INPUT_POST, 'met_rock');
-        echo $valueName;
+
         echo "<option value='" . $valueName . "'>" . $valueName . "</option>";
 
         include "../resources/constants.php";
@@ -32,7 +32,7 @@
         }
         ?>
     </select>
-    <input type="submit" value="Modify" id="modify" name="modify"> 
+    <input type="submit" value="View" id="view" name="view"> 
 </form>
 <?php
 if (!empty($valueName)) {
@@ -48,45 +48,45 @@ if (!empty($valueName)) {
     $desc = Constants::getDescription();
 
     $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $name . '="' . $valueName . '"';
-    $result = mysqli_query($connection, $sql) or die(mysqli_error());    
+    $result = mysqli_query($connection, $sql) or die(mysqli_error());
     if (mysqli_num_rows($result) > 0) {
         $results = mysqli_fetch_array($result);
         echo '<table border="1">';
         echo '  <tr>';
         echo '    <td> ' . Strings::getMainMetamorphic() . '</td>';
-        echo '    <td> '.$results[$main] .' </td>';
+        echo '    <td> ' . $results[$main] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getSecMetamorphic() . '</td>';
-        echo '    <td> '.$results[$sec].' </td>';
+        echo '    <td> ' . $results[$sec] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getStructure() . '</td>';
-        echo '    <td> '.$results[$struc].' </td>';
+        echo '    <td> ' . $results[$struc] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getComposition() . '</td>';
-        echo '    <td> '.$results[$comp].' </td>';
+        echo '    <td> ' . $results[$comp] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getTexture() . '</td>';
-        echo '    <td> '.$results[$texture].' </td>';
+        echo '    <td> ' . $results[$texture] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getMetamorphism() . '</td>';
-        echo '    <td> '.$results[$meta].' </td>';
+        echo '    <td> ' . $results[$meta] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getFacies() . '</td>';
-        echo '    <td> '.$results[$facies].' </td>';
+        echo '    <td> ' . $results[$facies] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getProtolith() . '</td>';
-        echo '    <td> '.$results[$proto].' </td>';
+        echo '    <td> ' . $results[$proto] . ' </td>';
         echo '  </tr>';
         echo '  <tr>';
         echo '    <td> ' . Strings::getDescription() . '</td>';
-        echo '    <td> '.$results[$desc].' </td>';
+        echo '    <td> ' . $results[$desc] . ' </td>';
         echo '  </tr>';
         echo '</table>';
     }
