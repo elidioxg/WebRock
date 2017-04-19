@@ -8,75 +8,75 @@
             <table >
                 <tr>
                     <td> <label> Name</label> </td>
-                    <td colspan="3"> <input type="text" name="field1" id="field1"> <br></td>
+                    <td> <input type="text" name="fieldName" id="field"></td>
                 </tr>
                 <tr>
-                    <td> <table> <label> Main Mineralogy</label></td>
-                    <td> <input type="text" name="field2" id="field2"></td>
+                    <td> <label> Main Mineralogy</label></td>
+                    <td> <input type="text" name="fieldMain" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Secondary Mineralogy</label></td>
-                    <td> <input type="text" name="field3" id="field3"></td>
+                    <td> <input type="text" name="fieldSec" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Structure</label></td>
-                    <td> <input type="text" name="field3" id="field3"></td>
+                    <td> <input type="text" name="fieldStruc" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Chrystalline</label></td>
-                    <td> <input type="text" name="field4" id="field4"></td>
+                    <td> <input type="text" name="fieldChr" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Visibility</label></td>
-                    <td> <input type="text" name="field5" id="field5"></td>
+                    <td> <input type="text" name="fieldVis" id="field5"></td>
                 </tr>
                 <tr>
                     <td> <label> Size</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldSize" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> relative_size</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldRel" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> geometry</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldGeo" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Articulation</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldArt" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> framework</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldFram" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> acidity</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldAcid" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> saturation</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldSat" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Feldspars</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldFel" id="field"></td>
                 </tr>
                 <tr>
-                    <td> <label> color_index</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <label> Color Index</label></td>
+                    <td> <input type="text" name="fieldColor" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Alumina</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldAlumina" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Alkalinity</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldAlk" id="field"></td>
                 </tr>
                 <tr>
                     <td> <label> Description</label></td>
-                    <td> <input type="text" name="field" id="field"></td>
+                    <td> <input type="text" name="fieldDes" id="field"></td>
                 </tr>
                 <tr>
                     <td colspan="4">

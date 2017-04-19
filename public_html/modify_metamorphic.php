@@ -11,7 +11,8 @@
             include '../resources/constants_eng.php';
             header('Content-Type: text/html; charset=UTF-8');
 
-            $valueName = $_GET['rock'];
+            $valueName = filter_input(INPUT_POST, 'rock_name');
+            //$valueName = $_GET['rock'];
 
             $user = Constants::getUser();
             $local = Constants::getLocal();
@@ -43,20 +44,20 @@
 
             echo "            <table>";
             echo "                <tr>";
-            echo "                    <td> <label>".Strings::getName()."/label></td>";
+            echo "                    <td> <label>".Strings::getName()."</label></td>";
             echo '                    <td> <input type="text" name="field1" id="field1" value="' . $results[$name] . '"></td>';
             echo "                </tr>";
             echo "                <tr>";
-            echo "                    <td> <label>".Strings::getMainMetamorphic()."</label></td>";
-            echo '                    <td> <textarea type="text" name="field2"id="field2" value="' . $results[$main] . '"></textarea></td>';
+            echo "                    <td> <label>".Strings::getMainMetamorphic()."</label></td>";            
+            echo '                    <td> <textarea type="text" name="field2" id="field2">'.$results[$main].'</textarea></td>';
             echo "                </tr>";
             echo "                <tr>";
             echo "                    <td> <label>".Strings::getSecMetamorphic()."</label></td>";
-            echo '                    <td> <textarea type="text" name="field3"id="field3" value="' . $results[$sec] . '"></textarea></td>';
+            echo '                    <td> <textarea type="text" name="field3" id="field3">' . $results[$sec] . '</textarea></td>';
             echo "                </tr>";
             echo "                <tr>";
             echo "                    <td> <label> ".Strings::getComposition()."</label> </td>";
-            echo '                    <td> <input type="text" name="field4"id="field4" value="' . $results[$composition] . '"></td>';
+            echo '                    <td> <input type="text" name="field4" id="field4" value="' . $results[$composition] . '"></td>';
             echo "                </tr>";
             echo "                <tr>";
             echo "                    <td> <label> ".Strings::getStructure()."</label></td>";
@@ -80,7 +81,7 @@
             echo "                </tr>";
             echo "                <tr>";
             echo "                    <td> ".Strings::getDescription()."</td>";
-            echo '                    <td> <textarea type="text" name="field10" id="field10"value="' . $results[$description] . '"></textarea></td>';
+            echo '                    <td> <textarea type="text" name="field10" id="field10">' . $results[$description] . '</textarea></td>';
             echo "                </tr>";
             echo "            </table>";
             mysql_close($connection);

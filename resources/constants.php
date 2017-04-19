@@ -4,14 +4,16 @@ class Constants{
     
     const USER  = 'root';
     const LOCAL = 'localhost';
-    const PASSWD  = 'pracadadpe';
+    const PASSWD  = '';
     const DATABASE = 'rocks';
-    const NAME = 'name';
+    
+    const NAME = 'name';//Used for both Magmatic and Metamorphic
+    const STRUCTURE = 'structure'; //Used for both Magmatic and Metamorphic
+    const DESCRIPTION = 'description';//Used for both Magmatic and Metamorphic
+    
     const TABLE_MAGMATIC = 'magmatic';
-    const TABLE_METAMORPHIC = 'metamorphic';
     const MAIN_MINERALOGY = 'mineralogy';
     const SECONDARY_MINERALOGY = 'secondary';
-    const STRUCTURE = 'structure'; //Used for both Magmatic and Metamorphic
     const CHRYSTALLINE = 'chrystal';
     const VISIBILITY = 'visibility';
     const SIZE = 'size';
@@ -25,8 +27,8 @@ class Constants{
     const COLOR_INDEX = 'color_index';
     const ALUMINA = 'alumina';
     const ALCALINITY = 'alkalinity';
-    const DESCRIPTION = 'description';//Used for both Magmatic and Metamorphic
     
+    const TABLE_METAMORPHIC = 'metamorphic';
     const MAIN_METAMORPHIC = 'main';
     const SECONDARY_METAMORPHIC = 'sec';
     const COMPOSITION = 'composition';

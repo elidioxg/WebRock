@@ -1,24 +1,24 @@
 <?php
 
 include '../resources/constants.php';
-$value1 = filter_input(INPUT_POST, 'field1');
-$value2 = filter_input(INPUT_POST, 'field2');
-$value3 = filter_input(INPUT_POST, 'field3');
-$value4 = filter_input(INPUT_POST, 'field4');
-$value5 = filter_input(INPUT_POST, 'field5');
-$value6 = filter_input(INPUT_POST, 'field6');
-$value7 = filter_input(INPUT_POST, 'field7');
-$value8 = filter_input(INPUT_POST, 'field8');
-$value9 = filter_input(INPUT_POST, 'field9');
-$value10 = filter_input(INPUT_POST, 'field10');
-$value11 = filter_input(INPUT_POST, 'field11');
-$value12 = filter_input(INPUT_POST, 'field12');
-$value13 = filter_input(INPUT_POST, 'field13');
-$value14 = filter_input(INPUT_POST, 'field14');
-$value15 = filter_input(INPUT_POST, 'field15');
-$value16 = filter_input(INPUT_POST, 'field16');
-$value17 = filter_input(INPUT_POST, 'field17');
-$value18 = filter_input(INPUT_POST, 'field18');
+$valueName = filter_input(INPUT_POST, 'fieldName');
+$valueMain = filter_input(INPUT_POST, 'fieldMain');
+$valueSec = filter_input(INPUT_POST, 'fieldSec');
+$valueStruc = filter_input(INPUT_POST, 'fieldStruc');
+$valueChr = filter_input(INPUT_POST, 'fieldChr');
+$valueVis = filter_input(INPUT_POST, 'fieldVis');
+$valueSize = filter_input(INPUT_POST, 'fieldSize');
+$valueRel = filter_input(INPUT_POST, 'fieldRel');
+$valueGeo = filter_input(INPUT_POST, 'fieldGeo');
+$valueArt = filter_input(INPUT_POST, 'fieldArt');
+$valueFram = filter_input(INPUT_POST, 'fieldFram');
+$valueAcid = filter_input(INPUT_POST, 'fieldAcid');
+$valueSat = filter_input(INPUT_POST, 'fieldSat');
+$valueFel = filter_input(INPUT_POST, 'fieldFel');
+$valueColor = filter_input(INPUT_POST, 'fieldColor');
+$valueAlumina = filter_input(INPUT_POST, 'fieldAlumina');
+$valueAlk = filter_input(INPUT_POST, 'fieldAlk');
+$valueDes = filter_input(INPUT_POST, 'fieldDes');
 
 $user = Constants::getUser();
 $local = Constants::getLocal();
@@ -58,10 +58,10 @@ if (\mysql_num_rows($result) <= 0) {
             "$chrystal, $visibility, $size, $relative_size, $geometry, " .
             "$articulation, $framework, $acidity, $saturation, $feldspars," .
             "$color_index, $alumina, $alkalinity, $description) VALUES ('" .
-            "$value1', '$value2', '$value3', '$value4', '$value5', '$value6'," .
-            "'$value7', '$value8', '$value9', '$value10'," .
-            "'$value11', '$value12', '$value13', '$value14', '$value15'," .
-            "'$value16', '$value17', '$value18');";
+            "$valueName', '$valueMain', '$valueSec', '$valueStruc', '$valueChr', '$valueVis'," .
+            "'$valueSize', '$valueRel', '$valueGeo', '$valueArt'," .
+            "'$valueFram', '$valueAcid', '$valueSat', '$valueFel', '$valueColor'," .
+            "'$valueAlumina', '$valueAlk', '$valueDes');";
     $result = mysql_query($sql, $connection) or die(mysql_error());
     echo "<script language='javascript' type='text/javascript'>"
     . "alert('Registro adicionado'); window.location.href='index_magmatic.php'</script>";

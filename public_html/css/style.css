@@ -1,3 +1,47 @@
+th {
+    text-align: center;
+    padding: 5px;
+}
+td {
+    vertical-align: Top;
+    padding: 5px;
+}
+
+a#btrock {
+    background-color: #f2f2f2;
+    padding: 5px;
+    text-decoration: none;
+    color: #001111;
+    display: inline;
+    vertical-align:middle;
+    margin:3px;
+}
+a#btrock:hover{
+    color: #dddddd;
+    background-color: #001111;
+}
+
+ul#horizontal_list li {
+    display:inline;
+    margin-right:10px;
+    padding-right:20px;
+}
+
+ul#horizontal_list li a {
+    background-color: #4c4c4c;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: inline;
+    vertical-align:top;
+    margin-right:3px;
+}
+
+ul#horizontal_list li a:hover {
+    color: white;
+    background-color: gray;
+} 
+
 li a {
     padding: 50px;
     margin-top: 10px; 
@@ -5,31 +49,42 @@ li a {
     margin-bottom: 10px;
     margin-left: 10px;
 }
-ul#horizontal_list {
-	
-	padding:10px 10px;
-	margin-bottom:5px;
-	margin-left:10px;       
-		
-	}
 
-ul#horizontal_list li {
-	display:inline;
-	margin-right:10px;
-	padding-right:20px;
-	}
+ul#menulist {
 
-ul#horizontal_list li a {
-    	background-color: #ffffff;
-    	padding: 10px 10px;
-    	text-decoration: none;
-    	color: #696969;
-  	display: inline;
-    	vertical-align:top;
-	margin-right:3px;
+    padding:10px 10px;
+    margin-bottom:5px;
+    margin-left:10px;    
+    vertical-align: top;
 }
 
-ul#horizontal_list li a:hover {
+ul#menulist li {
+    display:block;
+    margin-right:10px;
+    padding-right:20px;
+    vertical-align: top;
+}
+
+ul#menulist li a {
+    background-color: #ffffff;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #696969;
+    display: block;
+    vertical-align:top;
+    margin-right:3px;
+}
+
+ul#menulist li a:hover {
     color: white;
     background-color: black;
-} 
+}
+label#title{
+    font-size: 12px;
+    font-style: italic;
+    padding: 10px;    
+}
+label#tableTitle{
+    font-size: 16px;
+    font-weight: bold;
+}

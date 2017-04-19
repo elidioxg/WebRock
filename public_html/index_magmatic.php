@@ -3,8 +3,7 @@
         <td colspan="4"> <?php include './header.php'; ?></td>
     </tr>
     <tr>
-        <td> <?php 
-            $_SESSION['rock_type'] = 'magmatic';            
+        <td> <?php
             include './panel_magmatic.php';
             ?> 
         </td>

@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>WebRocks - Database of Rocks</title>
+        <meta name="author" content="elidioxg" >
+        <meta name="keywords" 
+              content="geology, geoscience, software, open, source, rock, rocks, database">
     </head>
     <body>        
         <table>
@@ -15,6 +18,7 @@
                 <td colspan="2"> 
                     <?php
                     $rock_type = $_SESSION['rock_type'];
+                    echo "Rock Session: $rock_type";
                     switch ($rock_type) {
                         case 'magmatic':
                             include './public_html/index_magmatic.php';
@@ -37,6 +41,6 @@
         </table>
         <?php
         // put your code here
-        ?>
+        ?>        
     </body>
 </html>

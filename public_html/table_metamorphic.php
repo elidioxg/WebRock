@@ -48,7 +48,12 @@ echo '        <td> <label id="tableTitle">'.Strings::getDescription().'</label><
 echo '    </tr>';
 while ($results = mysql_fetch_array($result)) {
     echo "<tr>";    
-    echo "  <td> <a href='modify_metamorphic.php?rock=$results[$name]'> $results[$name]</a></td>";
+    echo "  <td>";
+    echo "    <form method='POST' action='/WebRocks/public_html/modify_metamorphic.php'>";
+    echo "      <input type='submit' value='".$results[$name]."' name='rock_name' id='btrock'>"; 
+    echo "    </form>";
+    echo "  </td>";
+    //echo "  <td> <a href='modify_metamorphic.php?rock=$results[$name]'> $results[$name]</a></td>";
     echo "  <td> $results[$main] </td>";
     echo "  <td> $results[$sec]</td>";
     echo "  <td> $results[$composition]</td>";

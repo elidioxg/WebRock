@@ -55,11 +55,11 @@
             echo "     </tr>";
             echo "     <tr>";
             echo "         <td> <label>".Strings::getMainMagmatic()."</label></td>";
-            echo '         <td> <textarea type="text" name="field2" id="field2"value="' . $results[$mineralogy] . '"></textarea></td>';
+            echo '         <td> <textarea type="text" name="field2" id="field2">' . $results[$mineralogy] . '</textarea></td>';
             echo "     </tr>";
             echo "     <tr>";
             echo "         <td> <label> ".Strings::getSecMagmatic()."</label></td>";
-            echo '         <td> <textarea type="text" name="field3" id="field3"value="' . $results[$secondary] . '"></textarea></td>';
+            echo '         <td> <textarea type="text" name="field3" id="field3">' . $results[$secondary] . '</textarea></td>';
             echo "     </tr>";
             echo "     <tr>";
             echo "         <td> <label> ".Strings::getStructure()."</label></td>";
@@ -119,7 +119,7 @@
             echo "     </tr>";
             echo "     <tr>";
             echo "         <td> <label> ".Strings::getDescription()."</label></td>";
-            echo '        <td> <textarea type="text" name="field" id="field"value="' . $results[$description] . '"></textarea></td>';
+            echo '        <td> <textarea type="text" name="field" id="field">' . $results[$description] . '</textarea></td>';
             echo "     </tr>";
             echo " </table>";
             ?>

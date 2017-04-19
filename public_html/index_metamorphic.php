@@ -5,8 +5,7 @@
         </td>
     </tr>
     <tr>
-        <td> <?php 
-            $_SESSION['rock_type'] = 'metamorphic';
+        <td> <?php             
             include  './panel_metamorphic.php';  
             ?> 
         </td>
